@@ -1,0 +1,21 @@
+<div class="sug">
+    <div class="mdl-text-field mdl-text-field--outlined">
+        <input matInput placeholder="Sugerencias" [(ngModel)]="sugerencianueva.descripcion">
+        <button class="mdl-button" (click)="agregar()">
+            Agregar
+          </button>
+        <button class="mdl-button" (click)="mostrar()">
+            Actualizar sugerencias
+          </button>
+
+        <div class="mdl-notched-outlinee ">
+        </div>
+    </div>
+</div>
+<div>
+    <div *ngFor="let sugerencia of sugerenciasexistentes " id="cuadritox" [ngStyle]="{ 'background-color': sugerencia.color} " class="mdl-card mdl-shadow--2dp mdl-cell--2-col ">
+        <div class="mdl-card__supporting-text ">
+            {{ sugerencia.descripcion }}
+        </div>
+    </div>
+</div>
