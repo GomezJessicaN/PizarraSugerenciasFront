@@ -48,14 +48,14 @@ describe("PizarraComponent", () => {
     expect(component.sugerencianueva.descripcion).toBeFalsy();
   });
 
-  it("ver sugerencia nueva", () => {
-    let cantSugerencias = component.sugerenciasexistentes.length;
-    //escribo una sugerencia nueva
-    component.sugerencianueva.descripcion = "test2";
-    expect(cantSugerencias).toEqual(0)
-    //agregar la sugerencia
-    component.verSugerenciaNueva();
-    //ver la sugerencia
-    expect(cantSugerencias).toEqual(1);
-  });
+    it("ver sugerencia nueva", () => {
+      // let cantSugerencias = component.sugerenciasexistentes.length;
+      //escribo una sugerencia nueva
+      component.sugerencianueva.descripcion = "test2";
+      //agregar la sugerencia
+      component.verSugerenciaNueva()
+      let cantSugerencias = component.sugerenciasexistentes.length;
+      //ver la sugerencia
+      expect(cantSugerencias).toBe(1);
+    });
 });
