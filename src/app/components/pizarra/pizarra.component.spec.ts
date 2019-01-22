@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { async, ComponentFixture, TestBed, fakeAsync, tick } from "@angular/core/testing";
 import { PizarraComponent } from "./pizarra.component";
 import { Sugerencia } from "../models/sugerencia";
 import { FormsModule } from "@angular/forms";
@@ -48,14 +48,14 @@ describe("PizarraComponent", () => {
     expect(component.sugerencianueva.descripcion).toBeFalsy();
   });
 
-    it("ver sugerencia nueva", () => {
-      // let cantSugerencias = component.sugerenciasexistentes.length;
-      //escribo una sugerencia nueva
-      component.sugerencianueva.descripcion = "test2";
-      //agregar la sugerencia
-      component.verSugerenciaNueva()
-      let cantSugerencias = component.sugerenciasexistentes.length;
-      //ver la sugerencia
-      expect(cantSugerencias).toBe(1);
-    });
+  it("ver sugerencia nueva", () => {
+    // let cantSugerencias = component.sugerenciasexistentes.length;
+    //escribo una sugerencia nueva
+    component.sugerencianueva.descripcion = "test2";
+    //agregar la sugerencia
+    component.verSugerenciaNueva()
+    let cantSugerencias = component.sugerenciasexistentes.length;
+    //ver la sugerencia
+    expect(cantSugerencias).toBe(1);
+  });
 });
